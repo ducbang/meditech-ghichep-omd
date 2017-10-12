@@ -154,6 +154,12 @@ daemon_dumps_core=0
 /opt/omd/sites/site1/var/nagios/archive
 ```
 
+- Các cấu hình host trên Nagios trong check_mk
+
+```
+/opt/omd/sites/site1/etc/nagios/conf.d/check_mk_objects.cfg
+```
+
 - https://mathias-kettner.de/checkmk_omd.html
 
 ## Xem lại kết quả trên Dashboard
