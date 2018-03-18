@@ -12,4 +12,4 @@ else
         INFO=$(echo -e "HOST: $NOTIFY_HOSTNAME \n $NOTIFY_WHAT: $NOTIFY_SERVICEDESC - $NOTIFY_SERVICEOUTPUT\nAt: $NOTIFY_DATE")
 fi
 
-curl -X POST -H "X-API-Key: $SECRET" -v -d'{"'"autorespond"'":false, "'"source"'": "'"API"'", "'"name"'": "'"GUEST"'", "'"email"'":"'"hoangdh@example.com"'", "'"subject"'":"'"$SUBJECT"'", "'"message"'":"'"$INFO"'", "'"topicId"'" : "'"2"'"}' http://$DOMAIN/helpdesk/api/http.php/tickets.json
+curl -X POST -H "X-API-Key: $SECRET" -d'{"'"autorespond"'":false, "'"source"'": "'"API"'", "'"name"'": "'"GUEST"'", "'"email"'":"'"hoangdh@example.com"'", "'"subject"'":"'"$SUBJECT"'", "'"message"'":"'"$INFO"'", "'"topicId"'" : "'"2"'"}' http://$DOMAIN/helpdesk/api/http.php/tickets.json
