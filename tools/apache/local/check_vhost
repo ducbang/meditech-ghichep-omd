@@ -1,0 +1,31 @@
+#!/bin/bash
+
+##
+#
+# Liet ke danh sach VHost cua APACHE - $list
+# NGINX: grep server_name /etc/nginx/* -RiI
+# 
+##
+
+list=`httpd -S | awk '/namevhost/ {print $4}'`
+# list2="nangtam.vn tenten.vn bookclubs.barnesandnoble.com meditech.vn diennuocdaiphong.com"
+for x in $list
+do
+	# Lay code response cua Website
+	code=`wget -O- --server-response --timeout=1 -t 1 $x 2>&1 | awk '/^  HTTP/{print $2}' | tail -n1`
+	code=$(($code + 0))
+	case $code in
+	0)
+		echo "2 Check_VHost:$x - Ket noi KHONG thanh cong!"
+		;;
+	200)
+        echo "0 Check_VHost:$x - Ket noi thanh cong!"
+        ;;
+    [300-599]*)
+        echo "1 Check_VHost:$x - CODE: $code"
+        ;;
+	*)
+		echo "3 Check_VHost:$x - Khong ro nguyen nhan."
+		;;
+	esac
+done
