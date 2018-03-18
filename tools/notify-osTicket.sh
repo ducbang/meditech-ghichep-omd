@@ -13,4 +13,6 @@ else
 fi
 
 
-curl -X POST -H "X-API-Key: $SECRET" -d'{"autorespond":false, "source": "API", "name": "GUEST", "email":"hoangdh@example.com", "subject":"$SUBJECT", "message":"$INFO", "topicId" : "2"}' http://192.168.30.121/helpdesk/api/http.php/tickets.json
+curl -X POST -H "X-API-Key: $SECRET" 
+\ -d"{\"autorespond\":false, \"source\": \"API\", \"name\": \"GUEST\", \"email\":\"hoangdh@example.com\", \"subject\":\"$SUBJECT\", \"message\":\"$INFO\", \"topicId\" : \"2\"}"
+ http://192.168.30.121/helpdesk/api/http.php/tickets.json
