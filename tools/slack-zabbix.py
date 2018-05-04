@@ -26,7 +26,7 @@ def usage():
 
 '''
 Default subject: {TRIGGER.STATUS}
-Default message: {TRIGGER.SEVERITY} ;; {HOST.NAME1} ;; {TRIGGER.NAME} ;; {TRIGGER.ID} ;; {EVENT.ID} ;; {ITEM.ID1} ;; {ITEM.NAME1} ;; {HOST.IP1}
+Default message: {TRIGGER.SEVERITY} ;; {HOST.NAME1} ;; {TRIGGER.NAME} ;; {TRIGGER.ID} ;; {EVENT.ID} ;; {ITEM.ID1} ;; {ITEM.NAME1} ;; {HOST.IP1} ;; {ITEM.DESCRIPTION1} ;; {ITEM.LASTVALUE1} ;; {EVENT.DATE} {TIME}
 '''
 
 def main():
@@ -47,7 +47,10 @@ def main():
     eventid = result[4]
     itemid = result[5]
     itemname = result[6]
-    diachiip = result[7]
+	deviceip = result[7]
+	itemdes = result[8]
+	itemvalue = result[9]
+	eventtime = result[10]
     zabbixurl = args[3]
     botname = args[4]
     hookurl = args[5]
@@ -97,8 +100,8 @@ def main():
     attachment = [{
         "fallback": summary,
         "thumb_url": thumb,
-        "text": message,
-        "title": status + ": " + device + " (" + diachiip + ")",
+        "text": message + ": " + itemdes + ": " + itemvalue + "\nTime: " + eventtime,
+        "title": status + ": " + device + " (" + deviceip + ")",
         "title_link": zabbixurl + "/tr_events.php?triggerid=" + triggerid + "&eventid=" + eventid,
         "color": color,
         "fields": fields

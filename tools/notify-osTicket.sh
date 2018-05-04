@@ -3,8 +3,8 @@
 
 SECRET="24B07C94FD38DE3D2C9A0311D84353C8"
 DOMAIN="192.168.30.121"
-SUBJECT=HOANGDH321
-INFO=123
+# SUBJECT=HOANGDH321
+# INFO=123
 if [ "$NOTIFY_WHAT" = "HOST" ]
 then
 		SUBJECT=$(echo -e "$NOTIFY_HOSTNAME - $NOTIFY_WHAT")
@@ -14,4 +14,4 @@ else
         INFO=$(echo -e "HOST: $NOTIFY_HOSTNAME \n $NOTIFY_WHAT: $NOTIFY_SERVICEDESC - $NOTIFY_SERVICEOUTPUT\nAt: $NOTIFY_DATE")
 fi
 
-curl -X POST -H "X-API-Key: $SECRET" -d'{"'"autorespond"'":false, "'"source"'": "'"API"'", "'"name"'": "'"GUEST"'", "'"email"'":"'"hoangdh@example.com"'", "'"subject"'":"'"$SUBJECT"'", "'"message"'":"'"$INFO"'", "'"topicId"'" : "'"2"'"}' http://$DOMAIN/helpdesk/api/http.php/tickets.json
+curl -X POST -H "X-API-Key: $SECRET" -d"{\"autorespond\":false, \"source\": \"API\", \"name\": \"GUEST\", \"email\":\"hoangdh@example.com\", \"subject\":\"$SUBJECT\", \"message\":\"$INFO\", \"topicId\" : \"2\"}" http://$DOMAIN/helpdesk/api/http.php/tickets.json
