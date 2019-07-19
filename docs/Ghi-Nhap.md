@@ -170,6 +170,19 @@ daemon_dumps_core=0
 
 Ví dụ, xem lại kết quả ngày 20/9/2017
 
+## Tinh chỉnh số lượt check mỗi giây
+
+### Với Nagios
+
+> /opt/omd/sites/<site-name>/etc/nagios/nagios.d/timing.cfg
+
+### Với icinga
+
+> /opt/omd/sites/<site-name>/etc/icinga/icinga.d/timing.cfg
+
+```
+max_concurrent_checks=32
+```
 
 ## Tự động phát hiện dịch vụ mới và xóa bỏ dịch vụ bị lỗi
 
