@@ -1,0 +1,15 @@
+version: '2'
+services:
+  check_mk:
+    image: checkmk/check-mk-raw:1.6.0-latest
+    network: "host"
+    ulimits:
+      nofile:
+        soft: 1024
+        hard: 2048
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./monitoring:/omd/sitesmkd
+    tmpfs:
+      - /opt/omd/sites/cmk/tmp:uid=1000,gid=1000
