@@ -10,6 +10,6 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./monitoring:/omd/sitesmkd
+      - ./monitoring:/omd/sites
     tmpfs:
       - /opt/omd/sites/cmk/tmp:uid=1000,gid=1000
