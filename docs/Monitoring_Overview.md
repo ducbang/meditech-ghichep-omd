@@ -7,7 +7,7 @@ Về tổng quan, điều kiện cần và đủ không thể thiếu cho một 
 
 Việc theo dõi, giám sát toàn bộ cơ sở hạ tầng cung cấp nhiều lợi ích cho một doanh nghiệp chứ không riêng gì bộ phận IT support hay đội ngũ vận hành.
 
-Chúng ta giám sát tổng quan về hệ thống máy chủ, hệ thống mạng và các ứng dụng để biết tình trạng hoạt động của chúng. Nhưng thông tin này giúp ích chúng ta giữ cho hệ thống hoạt động ổn định hoặc đưa ra nhận định, phương án mở rộng nếu nhận thấy cần thiết, đẩy lùi những sự cố có thể xảy ra.
+Chúng ta giám sát tổng quan về hệ thống máy chủ, hệ thống mạng và các ứng dụng để biết tình trạng hoạt động của chúng. Những thông tin này giúp ích chúng ta giữ cho hệ thống hoạt động ổn định hoặc đưa ra nhận định, phương án mở rộng nếu nhận thấy cần thiết, đẩy lùi những sự cố có thể xảy ra.
 
 ### Khái niệm `check` trong Monitoring
 
